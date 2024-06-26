@@ -9,11 +9,11 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "ejs": "^3.1.6",
-    // other dependencies
+    "ejs": "^3.1.6"
+    
   },
   "engines": {
-    "node": "14.x" // specify the Node.js version if needed
+    "node": "14.x"
   },
   "author": "chandan gurung",
   "license": "ISC"
