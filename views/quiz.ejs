@@ -1,0 +1,28 @@
+<!-- quiz.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Quiz</h1>
+  <form action="/submit" method="POST">
+    <p><%= question.question %></p>
+    <% if (question.type === 'multiple') { %>
+      <% question.incorrect_answers.concat(question.correct_answer).sort().forEach(answer => { %>
+        <input type="radio" id="<%= answer %>" name="answer" value="<%= answer %>" required>
+        <label for="<%= answer %>"><%= answer %></label><br>
+      <% }); %>
+    <% } else { %>
+      <input type="radio" id="True" name="answer" value="True" required>
+      <label for="True">True</label><br>
+      <input type="radio" id="False" name="answer" value="False" required>
+      <label for="False">False</label><br>
+    <% } %>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

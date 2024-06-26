@@ -1,0 +1,21 @@
+<!-- feedback.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Feedback</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1><%= isCorrect ? 'Correct!' : 'Incorrect!' %></h1>
+  <% if (!isCorrect) { %>
+    <p>The correct answer was: <%= correctAnswer %></p>
+  <% } %>
+  <script>
+    setTimeout(() => {
+      window.location.href = "<%= nextQuestionUrl %>";
+    }, 2000); // Redirect after 2 seconds
+  </script>
+</body>
+</html>

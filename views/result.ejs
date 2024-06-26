@@ -1,0 +1,21 @@
+<!-- result.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Result</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Quiz Result</h1>
+  <p>Your score this game: <%= score %> points</p>
+  <h2>Total Scores of All Games</h2>
+  <ul>
+    <% totalScores.forEach((gameScore, index) => { %>
+      <li>Game <%= index + 1 %>: <%= gameScore %> points</li>
+    <% }); %>
+  </ul>
+  <a href="/">Play Again</a>
+</body>
+</html>
